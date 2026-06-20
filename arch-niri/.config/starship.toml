@@ -1,0 +1,52 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+ [](cyan)\
+$os\
+$directory\
+[ ](cyan)\
+$line_break$character"""
+
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#131b4b"
+cyan = "#89eaff"
+
+
+
+[os]
+disabled = false
+style = "bg:cyan fg:background"
+
+[os.symbols]
+CachyOS = "󰉋"
+
+[directory]
+style = "bg:cyan    fg:background"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Videos" = " "
+"Code" = " "
+
+
+[line_break]
+disabled = true
+
+[character]
+disabled = true
+success_symbol = '[\$](bold fg:green)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[>](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:yellow)'
